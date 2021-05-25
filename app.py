@@ -18,7 +18,7 @@ if uri.startswith("postgres://"):
 # rest of connection code using the connection string `uri`
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('uri', 'sqlite:///data.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(uri, 'sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'jose'
 api = Api(app)
